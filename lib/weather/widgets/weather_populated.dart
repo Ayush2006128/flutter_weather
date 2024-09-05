@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_weather/weather/weather.dart';
+import 'package:lottie/lottie.dart';
 
 class WeatherPopulated extends StatelessWidget {
   const WeatherPopulated({
@@ -65,9 +66,10 @@ class _WeatherIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      condition.toEmoji,
-      style: const TextStyle(fontSize: _iconSize),
+    return SizedBox(
+      width: _iconSize,
+      height: _iconSize,
+      child: Lottie.asset(condition.toEmoji),
     );
   }
 }
@@ -76,15 +78,15 @@ extension on WeatherCondition {
   String get toEmoji {
     switch (this) {
       case WeatherCondition.clear:
-        return '☀️';
+        return 'sunny.json';
       case WeatherCondition.rainy:
-        return '🌧️';
+        return 'rainy.json';
       case WeatherCondition.cloudy:
-        return '☁️';
+        return 'cloudy.json';
       case WeatherCondition.snowy:
-        return '🌨️';
+        return 'rainy.json';
       case WeatherCondition.unknown:
-        return '❓';
+        return 'sunny.json';
     }
   }
 }
