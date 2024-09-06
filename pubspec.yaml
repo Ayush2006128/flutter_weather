@@ -12,6 +12,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.1
+  flutter_native_splash: ^2.4.1
   google_fonts: ^4.0.0
   hydrated_bloc: ^9.0.0
   json_annotation: ^4.8.1
@@ -27,6 +28,16 @@ dev_dependencies:
     sdk: flutter
   json_serializable: ^6.0.0
   mocktail: ^1.0.0
+
+flutter_native_splash:
+   color: "#65d3f7"
+   image: assets/img/cloudy.png
+   android: true
+   ios: false
+   android_gravity: fill
+   android_12:
+     color: "#65d3f7"
+     image: assets/img/cloudy.png
 
 flutter:
   uses-material-design: true

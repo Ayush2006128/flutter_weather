@@ -78,15 +78,15 @@ extension on WeatherCondition {
   String get toEmoji {
     switch (this) {
       case WeatherCondition.clear:
-        return 'sunny.json';
+        return 'assets/sunny.json';
       case WeatherCondition.rainy:
-        return 'rainy.json';
+        return 'assets/rainy.json';
       case WeatherCondition.cloudy:
-        return 'cloudy.json';
+        return 'assets/cloudy.json';
       case WeatherCondition.snowy:
-        return 'rainy.json';
+        return 'assets/rainy.json';
       case WeatherCondition.unknown:
-        return 'sunny.json';
+        return 'assets/sunny.json';
     }
   }
 }
