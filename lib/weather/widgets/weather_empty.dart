@@ -13,7 +13,7 @@ class WeatherEmpty extends StatelessWidget {
         SizedBox(
           width: 64,
           height: 64,
-          child: Lottie.asset('assets/cloudy.json'),
+          child: Lottie.asset('assets/rainy.json'),
         ),
         Text(
           'Please Select a City!',
