@@ -35,7 +35,7 @@ class _SearchPageState extends State<SearchPage> {
                 controller: _textController,
                 decoration: const InputDecoration(
                   labelText: 'City',
-                  hintText: 'Chicago',
+                  hintText: 'Murtijapur',
                 ),
               ),
             ),

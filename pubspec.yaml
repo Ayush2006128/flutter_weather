@@ -18,6 +18,7 @@ dependencies:
   json_annotation: ^4.8.1
   lottie: ^3.0.0
   path_provider: ^2.0.8
+  url_launcher: ^6.3.0
   weather_repository:
     path: packages/weather_repository
 
