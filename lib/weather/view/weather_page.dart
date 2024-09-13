@@ -10,11 +10,7 @@ class WeatherPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onDoubleTap: () {
-        launchUrl('https://www.youtube.com/@ayushmuley1907' as Uri);
-      },
-      child: Scaffold(
+    return Scaffold(
         extendBodyBehindAppBar: true,
         appBar: AppBar(
           actions: [
@@ -26,22 +22,27 @@ class WeatherPage extends StatelessWidget {
             ),
           ],
         ),
-        body: Center(
-          child: BlocBuilder<WeatherCubit, WeatherState>(
-            builder: (context, state) {
-              return switch (state.status) {
-                WeatherStatus.initial => const WeatherEmpty(),
-                WeatherStatus.loading => const WeatherLoading(),
-                WeatherStatus.failure => const WeatherError(),
-                WeatherStatus.success => WeatherPopulated(
-                    weather: state.weather,
-                    units: state.temperatureUnits,
-                    onRefresh: () {
-                      return context.read<WeatherCubit>().refreshWeather();
-                    },
-                  ),
-              };
-            },
+        body: GestureDetector(
+          onDoubleTapDown: (details) {
+            launchUrl(Uri.https('youtube.com', '@ayushmuley1907'));
+          },
+          child: Center(
+            child: BlocBuilder<WeatherCubit, WeatherState>(
+              builder: (context, state) {
+                return switch (state.status) {
+                  WeatherStatus.initial => const WeatherEmpty(),
+                  WeatherStatus.loading => const WeatherLoading(),
+                  WeatherStatus.failure => const WeatherError(),
+                  WeatherStatus.success => WeatherPopulated(
+                      weather: state.weather,
+                      units: state.temperatureUnits,
+                      onRefresh: () {
+                        return context.read<WeatherCubit>().refreshWeather();
+                      },
+                    ),
+                };
+              },
+            ),
           ),
         ),
         floatingActionButton: FloatingActionButton(
@@ -52,7 +53,6 @@ class WeatherPage extends StatelessWidget {
             await context.read<WeatherCubit>().fetchWeather(city);
           },
         ),
-      ),
     );
   }
 }
