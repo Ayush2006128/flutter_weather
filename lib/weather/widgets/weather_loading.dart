@@ -13,15 +13,11 @@ class WeatherLoading extends StatelessWidget {
         SizedBox(
           width: 64,
           height: 64,
-          child: Lottie.asset('assets/cloudy.json'),
+          child: Lottie.asset('assets/loading.json'),
         ),
         Text(
           'Loading Weather',
           style: theme.textTheme.headlineSmall,
-        ),
-        const Padding(
-          padding: EdgeInsets.all(16),
-          child: CircularProgressIndicator(),
         ),
       ],
     );

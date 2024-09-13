@@ -13,7 +13,7 @@ class WeatherError extends StatelessWidget {
         SizedBox(
           width: 64,
           height: 64,
-          child: Lottie.asset('assets/cloudy.json'),
+          child: Lottie.asset('assets/error.json'),
         ),
         Text(
           'Something went wrong!',
