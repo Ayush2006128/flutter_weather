@@ -21,6 +21,8 @@ class WeatherPopulated extends StatelessWidget {
       children: [
         _WeatherBackground(),
         RefreshIndicator(
+          color: Colors.black,
+          backgroundColor: Colors.white,
           onRefresh: onRefresh,
           child: Align(
             alignment: const Alignment(0, -1 / 3),
