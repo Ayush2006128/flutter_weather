@@ -13,6 +13,7 @@ dependencies:
     path: ../open_meteo_api
 
 dev_dependencies:
+  flutter_lints: ^4.0.0
   build_runner: ^2.0.0
   coverage: ^1.0.3
   json_serializable: ^6.3.1
